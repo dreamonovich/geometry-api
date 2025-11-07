@@ -1,0 +1,58 @@
+@GeometryApi_HostAddress = http://localhost:5088
+
+### Создать прямоугольник
+POST {{GeometryApi_HostAddress}}/api/figures
+Content-Type: application/json
+
+{
+  "type": "rectangle",
+  "leftUpper": {
+    "x": 0,
+    "y": 10
+  },
+  "rightBottom": {
+    "x": 5,
+    "y": 0
+  }
+}
+
+### Создать окружность
+POST {{GeometryApi_HostAddress}}/api/figures
+Content-Type: application/json
+
+{
+  "type": "circle",
+  "center": {
+    "x": 0,
+    "y": 0
+  },
+  "diameter": 10
+}
+
+### Создать треугольник
+POST {{GeometryApi_HostAddress}}/api/figures
+Content-Type: application/json
+
+{
+  "type": "triangle",
+  "leftBottom": {
+    "x": 0,
+    "y": 0
+  },
+  "rightBottom": {
+    "x": 4,
+    "y": 0
+  },
+  "upper": {
+    "x": 2,
+    "y": 3
+  }
+}
+
+### Получить фигуру по ID
+GET {{GeometryApi_HostAddress}}/api/figures/1
+Accept: application/json
+
+### Сумма площадей всех фигур
+GET {{GeometryApi_HostAddress}}/api/figures/sum-squares
+Accept: application/json
